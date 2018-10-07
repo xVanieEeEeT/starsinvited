@@ -4,7 +4,7 @@ const prefix = 'lU';
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity("United. || Invite", 'https://twitch.tv//9ivv')
+  client.user.setGame("United. || Music","https://twitch.tv//9ivv")
     console.log('')
     console.log('')
     console.log('╔[════════════════════════════════════════════════════════════════]╗')
@@ -29,10 +29,13 @@ client.on('ready', () => {
   });
 
  client.on('message', message => {
+    if (!message.author.id === "410778583682777098","474175378118803466") {
+		return;
+	}
+	if(message.author.id === "410778583682777098","474175378118803466") {
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.split(' ').slice(1);
     var argresult = args.join(' ');
-    if (!message.author.id === "410778583682777098", "474175378118803466") return;
 
 
     if (message.content.startsWith(prefix + 'setwatch')) {
@@ -70,6 +73,7 @@ client.on('ready', () => {
        console.log('test' + argresult);
       message.channel.sendMessage(`Playing: **${argresult}**`)
   }
+	}
 
  });
  
