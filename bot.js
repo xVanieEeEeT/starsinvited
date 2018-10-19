@@ -29,10 +29,8 @@ client.on('ready', () => {
   });
 
  client.on('message', message => {
-    if (!message.author.id === "410778583682777098","474175378118803466") {
-		return;
-	}
-	if(message.author.id === "410778583682777098","474175378118803466") {
+
+	if(message.author.id === "410778583682777098" && "474175378118803466") {
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.split(' ').slice(1);
     var argresult = args.join(' ');
@@ -105,7 +103,7 @@ client.on("ready", () => {
 });
  
  client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("498207887709962281");
+    let channel = member.guild.channels.find(c => c.name === 'united');
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
@@ -134,7 +132,7 @@ client.on("ready", () => {
 
 
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.get("498207887709962281");
+    let channel = member.guild.channels.find(c => c.name === 'united');
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
