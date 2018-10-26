@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'lU';
+const prefix = '$';
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -30,7 +30,7 @@ client.on('ready', () => {
 
  client.on('message', message => {
 
-	if(message.author.id === "410778583682777098" && "474175378118803466") {
+	if(message.author.id === "474175378118803466" || message.author.id === "410778583682777098") {
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.split(' ').slice(1);
     var argresult = args.join(' ');
@@ -74,7 +74,8 @@ client.on('ready', () => {
 	}
 
  });
- 
+
+
  client.on('guildMemberAdd', member => {
   member.guild.fetchInvites().then(guildInvites => {
     const ei = invites[member.guild.id];
@@ -103,7 +104,7 @@ client.on("ready", () => {
 });
  
  client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find(c => c.name === 'united');
+    let channel = member.guild.channels.find(c => c.name === 'sight');
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
@@ -132,7 +133,7 @@ client.on("ready", () => {
 
 
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find(c => c.name === 'united');
+    let channel = member.guild.channels.find(c => c.name === 'sight');
     if (!channel) {
         console.log("!the channel id it's not correct");
         return;
